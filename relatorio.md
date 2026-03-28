@@ -35,8 +35,9 @@ que qualquer desenvolvedor consiga preparar o ambiente com um único comando.
 - **Pipes**: usados para encadear comandos como `top | grep | awk`
 - **Redirecionamento**: logs salvos com `>>` e erros separados com `2>`
 - **Variáveis de ambiente**: `JAVA_HOME` configurado automaticamente no `.bashrc`
-- **Cron jobs**: agendamento do monitor e backup definido em `cronjobs.txt`
 - **Permissões**: todos os scripts com `chmod +x` para execução direta
+- **Cron jobs**: CodeSpaces não permitiu instalção do cron
+
 
 ## Conclusão
 

@@ -47,5 +47,4 @@ projeto-so/
 - Pipes
 - Redirecionamento de saída
 - Variáveis de ambiente
-- Cron jobs
 - Permissões de arquivo

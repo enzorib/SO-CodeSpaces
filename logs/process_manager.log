@@ -10,3 +10,6 @@
 [2026-03-28 18:25:09] Parando serviço 'backend' (PID: 17369)...
 [2026-03-28 18:25:09] Serviço 'backend' parado.
 [2026-03-28 18:25:10] Serviço 'backend' está PARADO
+[2026-03-28 18:38:31] backend iniciado com PID: 23605
+[2026-03-28 18:38:31] backend ta RODANDO (PID: 23605)
+[2026-03-28 18:38:31] backend parado

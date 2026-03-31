@@ -45,5 +45,4 @@ SO-CodeSpaces/
 - **Pipes**: encadeamento de comandos como `top | grep | awk`
 - **Redirecionamento**: logs salvos com `>>` e erros separados com `2>`
 - **Variáveis de ambiente**: `JAVA_HOME` e `ANDROID_HOME` configurados no `.bashrc`
-- **Cron jobs**: agendamento definido em `cronjobs.txt` para rodar em servidor real
-- **Permissões**: todos os scripts com `chmod +x` para execução direta
+gitZZ- **Permissões**: todos os scripts com `chmod +x` para execução direta

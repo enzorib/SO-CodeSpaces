@@ -1,0 +1,22 @@
+[2026-03-28 18:21:58] ===== INÍCIO DO BACKUP =====
+[2026-03-28 18:21:58] Origem verificada: /home/codespace/projeto-so/scripts
+[2026-03-28 18:21:58] Criando diretório de backup...
+[2026-03-28 18:21:58] Iniciando backup do código-fonte...
+[2026-03-28 18:21:58] Backup do código salvo em: /home/codespace/projeto-so/backups/scripts_2026-03-28_18-21-58
+[2026-03-28 18:21:58] Simulando backup do banco de dados...
+[2026-03-28 18:21:58] Backup do banco salvo em: /home/codespace/projeto-so/backups/banco_2026-03-28_18-21-58.sql
+[2026-03-28 18:21:58] Backups disponíveis:
+total 8.0K
+-rw-r--r-- 1 codespace codespace  105 Mar 28 18:21 banco_2026-03-28_18-21-58.sql
+drwxr-xr-x 2 codespace codespace 4.0K Mar 28 18:21 scripts_2026-03-28_18-21-58
+[2026-03-28 18:21:58] ===== FIM DO BACKUP =====
+[2026-03-28 18:38:15] fazendo backup dos scripts...
+[2026-03-28 18:38:15] scripts salvos em: /home/codespace/projeto-so/backups/scripts_2026-03-28_18-38-15
+[2026-03-28 18:38:15] simulando backup do banco...
+[2026-03-28 18:38:15] banco salvo em: /home/codespace/projeto-so/backups/banco_2026-03-28_18-38-15.sql
+[2026-03-28 18:38:15] backups disponiveis:
+total 16K
+-rw-r--r-- 1 codespace codespace  105 Mar 28 18:21 banco_2026-03-28_18-21-58.sql
+-rw-r--r-- 1 codespace codespace   67 Mar 28 18:38 banco_2026-03-28_18-38-15.sql
+drwxr-xr-x 2 codespace codespace 4.0K Mar 28 18:21 scripts_2026-03-28_18-21-58
+drwxr-xr-x 2 codespace codespace 4.0K Mar 28 18:38 scripts_2026-03-28_18-38-15

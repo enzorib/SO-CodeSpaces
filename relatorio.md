@@ -2,45 +2,49 @@
 
 ## Introdução
 
-Durante o desenvolvimento de um projeto, várias tarefas precisam ser feitas
-repetidamente: monitorar o servidor, fazer backups, configurar o ambiente e
-gerenciar serviços. Fazer isso manualmente toda vez é lento e sujeito a erro.
-Os scripts desenvolvidos nesse trabalho automatizam essas tarefas.
+O projeto Clínica Maya é um aplicativo Android desenvolvido em Java no Android Studio.
+Durante o desenvolvimento, várias tarefas precisam ser feitas repetidamente: monitorar
+o servidor, fazer backups, configurar o ambiente e gerenciar serviços. Fazer isso
+manualmente toda vez é lento e sujeito a erro. Os scripts desenvolvidos nesse trabalho
+automatizam essas tarefas usando conceitos vistos em aula.
 
 ## Scripts e suas funções
 
 ### monitor.sh
-Sem o script, verificar CPU, memória e disco exigiria rodar vários comandos
-separados e anotar os resultados manualmente. Com o script, uma única execução
-coleta tudo e salva automaticamente em log com timestamp, permitindo acompanhar
-o histórico do sistema ao longo do tempo.
+Coleta métricas de CPU, memória e disco em loop, fazendo 5 coletas com intervalo de
+3 segundos entre cada uma. Além das métricas do sistema, verifica se o Gradle está
+rodando durante o build do app e se o ADB está conectado a algum dispositivo ou
+emulador. Dispara alertas automáticos no log quando CPU passa de 80%, memória de 85%
+ou disco de 90%.
 
 ### backup.sh
-Fazer backup manual é uma tarefa fácil de esquecer. O script automatiza a cópia
-dos arquivos do projeto e simula o dump do banco de dados, salvando tudo com
-data e hora no nome. Isso garante que sempre exista uma versão recente salva.
+Automatiza o backup dos scripts do projeto, dos arquivos de configuração do Gradle
+e do banco de dados SQLite usado pelo app. Se nenhum banco for encontrado, gera um
+backup simulado com a estrutura do banco da Clínica Maya. Todos os arquivos são
+salvos com data e hora no nome, garantindo um histórico de versões.
 
 ### process_manager.sh
-Gerenciar serviços manualmente exige lembrar de PIDs e comandos específicos.
-O script centraliza isso em uma interface simples de start, stop, status e
-restart, além de registrar tudo em log para facilitar a identificação de falhas.
+Gerencia três tipos de serviço: backend, Gradle e ADB. Para cada um, suporta os
+comandos start, stop, status e restart. O status do ADB mostra quantos dispositivos
+estão conectados, o Gradle usa seus próprios comandos nativos e o backend é controlado
+via PID. Tudo é registrado em log com timestamp.
 
 ### setup.sh
-Configurar um ambiente do zero em uma máquina nova pode levar horas. O script
-automatiza a verificação e instalação das dependências necessárias, garantindo
-que qualquer desenvolvedor consiga preparar o ambiente com um único comando.
+Automatiza a configuração do ambiente de desenvolvimento Android do zero. Verifica e
+instala Java, Gradle, Android SDK command line tools e ADB. Configura as variáveis
+de ambiente JAVA_HOME e ANDROID_HOME automaticamente no .bashrc, deixando o ambiente
+pronto para buildar o app com um único comando.
 
 ## Conceitos aplicados
 
-- **Pipes**: usados para encadear comandos como `top | grep | awk`
-- **Redirecionamento**: logs salvos com `>>` e erros separados com `2>`
-- **Variáveis de ambiente**: `JAVA_HOME` configurado automaticamente no `.bashrc`
-- **Permissões**: todos os scripts com `chmod +x` para execução direta
-- **Cron jobs**: CodeSpaces não permitiu instalção do cron
-
+- **Pipes**: usados para encadear comandos como `top | grep | awk` e `find | while read`
+- **Redirecionamento**: logs salvos com `>>`, erros separados com `2>` e arquivos criados com `>`
+- **Variáveis de ambiente**: `JAVA_HOME` e `ANDROID_HOME` configurados automaticamente no `.bashrc`
+- **Permissões**: todos os scripts recebem `chmod +x` para execução direta sem precisar chamar o bash explicitamente
 
 ## Conclusão
 
-A automação com shell scripts reduz erros humanos, economiza tempo e padroniza
-os processos do projeto. Tarefas que levariam minutos manuais passam a ser
-executadas em segundos com um único comando.
+A automação com shell scripts reduz erros humanos, economiza tempo e padroniza os
+processos do projeto. Com os quatro scripts desenvolvidos, tarefas que levariam
+minutos manuais passam a ser executadas em segundos, facilitando o ciclo de
+desenvolvimento do app Clínica Maya.

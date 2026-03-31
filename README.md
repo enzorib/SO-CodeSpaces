@@ -1,25 +1,23 @@
-# SO-CodeSpaces
+# SO-CodeSpaces — Infraestrutura e Automação com Linux
 
-# Infraestrutura e Automação com Linux
-
-Scripts Shell/Bash para automação de tarefas do ambiente de desenvolvimento.
+Scripts Shell/Bash para automação de tarefas do ambiente de desenvolvimento do app Android (Clínica Maya).
 
 ## Scripts
 
 ### monitor.sh
-Coleta métricas do sistema (CPU, memória e disco) e salva em um arquivo de log com timestamp.
+Coleta métricas do sistema (CPU, memória e disco) e salva em arquivo de log com timestamp.
 ```bash
 bash scripts/monitor.sh
 ```
 
 ### backup.sh
-Faz backup dos scripts do projeto e simula um backup do banco de dados. Os arquivos são salvos com data e hora no nome.
+Faz backup dos scripts, arquivos Gradle e banco de dados SQLite do projeto. Se nenhum banco for encontrado, gera um backup simulado.
 ```bash
 bash scripts/backup.sh
 ```
 
 ### process_manager.sh
-Gerencia serviços do backend. Aceita os comandos start, stop, status e restart.
+Gerencia serviços do backend com os comandos start, stop, status e restart.
 ```bash
 bash scripts/process_manager.sh start backend
 bash scripts/process_manager.sh status backend
@@ -28,14 +26,14 @@ bash scripts/process_manager.sh stop backend
 ```
 
 ### setup.sh
-Verifica e instala as dependências do ambiente (Java, git, curl, wget, unzip) e configura o JAVA_HOME.
+Verifica e instala as dependências do ambiente de desenvolvimento Android: Java, Gradle, Android SDK, ADB e outras ferramentas.
 ```bash
 bash scripts/setup.sh
 ```
 
 ## Estrutura de pastas
 ```
-projeto-so/
+SO-CodeSpaces/
 ├── scripts/   # scripts principais
 ├── logs/      # logs gerados automaticamente
 ├── backups/   # backups gerados pelo backup.sh
@@ -44,7 +42,8 @@ projeto-so/
 
 ## Conceitos utilizados
 
-- Pipes
-- Redirecionamento de saída
-- Variáveis de ambiente
-- Permissões de arquivo
+- **Pipes**: encadeamento de comandos como `top | grep | awk`
+- **Redirecionamento**: logs salvos com `>>` e erros separados com `2>`
+- **Variáveis de ambiente**: `JAVA_HOME` e `ANDROID_HOME` configurados no `.bashrc`
+- **Cron jobs**: agendamento definido em `cronjobs.txt` para rodar em servidor real
+- **Permissões**: todos os scripts com `chmod +x` para execução direta

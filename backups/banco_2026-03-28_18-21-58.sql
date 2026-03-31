@@ -1,0 +1,3 @@
+-- Backup simulado em 2026-03-28_18-21-58
+-- Banco: projeto_so
+-- Tabelas: usuarios, logs, configuracoes

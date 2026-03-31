@@ -1,0 +1,2 @@
+-- backup gerado em 2026-03-28_18-38-15
+-- tabelas: usuarios, logs
